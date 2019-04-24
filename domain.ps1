@@ -15,7 +15,7 @@ Write-Host -ForegroundColor yellow $gateway
 
 # Set the current IP address as static
 Remove-NetIPAddress -InterfaceAlias $nicname -AddressFamily IPv4 -Confirm:$false
-#Remove-NetRoute -InterfaceAlias $nicname -AddressFamily IPv4 -Confirm:$false
+# Remove-NetRoute -InterfaceAlias $nicname -AddressFamily IPv4 -Confirm:$false
 New-NetIPAddress -InterfaceAlias $nicname -IPAddress $ipaddress -AddressFamily IPv4 -PrefixLength $prefixlength -DefaultGateway $gateway
 
 # Set the DNS address to ourselves
